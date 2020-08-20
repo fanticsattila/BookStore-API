@@ -11,3 +11,13 @@ Megjegyzések:
 2. Projekt átalakítása API-hoz
 	- Töröljük a Web alkalmazáshoz kötődő mappákat (Areas, Pages, wwwroot), átalakítjuk a Startup.cs-t, valamint létrehozzuk a "HomeController"-t.
 
+3. Swagger beüzemelése
+	- Telepítsük a következő NuGet csomagokat: 
+		Swashbuckle.AspNetCore.Swagger, 
+		Swashbuckle.AspNetCore.SwaggerGen, 
+		Swashbuckle.AspNetCore.SwaggerUi
+
+	- A csomagokat a Startup.cs-ben konfiguráljuk be
+
+	- Dokumentáció bekapcsolása: Projekt tulajdonságok, Build, Output, jelöljük be az XML documentation file-t.
+	- Fordítási dokumentáció hiányát jelző warning-ok kikapcsolása: Suppress warnings-hoz adjuk hozzá: 1591
