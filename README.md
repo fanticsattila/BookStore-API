@@ -33,3 +33,11 @@ Megjegyzések:
 5. CORS beállítása
 	- Startup.cs-ben állítsuk be a CORS szabályokat
 
+6. Adatbázis létrehozása, beállítása a projekthez
+	- MS SQL Szerverben futtassuk le az Adatbazis.sql szkriptet, ez létrehozza az adatbázist
+	- appsettings.json-ban írjuk át a ConnectionString-et
+	- ApplicationDbContext-ben hozzuk létre a táblákat, és az őket reprezentáló class-okat
+
+
+
+
