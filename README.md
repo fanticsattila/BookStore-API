@@ -40,6 +40,18 @@ Megjegyzések:
 
 6.5 Alternatíva a Scaffold-DbContext parancs a NuGet Package Manager Console-ban:
 	Scaffold-DbContext "Server=(local);Database=BookStore;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Data
+
+7. DTO és AutoMapper beállítása
+	- Telepítsük a következő NuGet csomagokat:
+		AutoMapper
+		AutoMapper.Extensions.Microsoft.DependencyInjection
+	- Hozzunk létre egy Mappings mappát, azon belül pedig egy Maps osztályt
+	- A Startup.cs-ben adjuk hozzá az AutoMapper-t a szolgáltatásokhoz
+	- Hozzunk létre egy DTOs mappát, hozzuk benne létre az AuthorDTO, és BookDTO osztályokat
+	- Az AuthorDTO-ba másoljuk be az Author osztály tulajdonságait, a BookDTO-ba pedig a Book osztályét
+	- A Maps osztály konstruktorába rendeljük össze az Author-AuthorDTO és Book-BookDTO osztályokat
+
+
 	
 
 
