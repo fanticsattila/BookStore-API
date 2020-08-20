@@ -21,3 +21,11 @@ Megjegyzések:
 
 	- Dokumentáció bekapcsolása: Projekt tulajdonságok, Build, Output, jelöljük be az XML documentation file-t.
 	- Fordítási dokumentáció hiányát jelző warning-ok kikapcsolása: Suppress warnings-hoz adjuk hozzá: 1591
+
+4. NLog bekötése a projektbe
+	- Telepítsük fel a következő NuGet csomagot:
+		NLog.Extensions.Logging
+	- Hozzuk létre a konfigurációs fájlt (nlog.config)
+	- Adjuk hozzá a LoggerService, ILoggerService fájlokat
+	- Adjuk hozzá Singleton-ként a szolgáltatást a Startup.cs-ben
+	- A Controller-ekben a HomeController-ben mutatott minta alapján használhatjuk
