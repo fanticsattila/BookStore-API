@@ -38,6 +38,11 @@ Megjegyzések:
 	- appsettings.json-ban írjuk át a ConnectionString-et
 	- ApplicationDbContext-ben hozzuk létre a táblákat, és az őket reprezentáló class-okat
 
+6.5 Alternatíva a Scaffold-DbContext parancs a NuGet Package Manager Console-ban:
+	Scaffold-DbContext "Server=(local);Database=BookStore;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Data
+	
+
+
 
 
 
