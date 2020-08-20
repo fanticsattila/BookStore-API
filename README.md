@@ -29,3 +29,7 @@ Megjegyzések:
 	- Adjuk hozzá a LoggerService, ILoggerService fájlokat
 	- Adjuk hozzá Singleton-ként a szolgáltatást a Startup.cs-ben
 	- A Controller-ekben a HomeController-ben mutatott minta alapján használhatjuk
+
+5. CORS beállítása
+	- Startup.cs-ben állítsuk be a CORS szabályokat
+
