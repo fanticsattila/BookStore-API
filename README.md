@@ -51,7 +51,11 @@ Megjegyzések:
 	- Az AuthorDTO-ba másoljuk be az Author osztály tulajdonságait, a BookDTO-ba pedig a Book osztályét
 	- A Maps osztály konstruktorába rendeljük össze az Author-AuthorDTO és Book-BookDTO osztályokat
 
+8. Repository előkészítése
 
+9. Author repository
+
+10. 
 	
 
 
