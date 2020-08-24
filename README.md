@@ -51,11 +51,11 @@ Megjegyzések:
 	- Az AuthorDTO-ba másoljuk be az Author osztály tulajdonságait, a BookDTO-ba pedig a Book osztályét
 	- A Maps osztály konstruktorába rendeljük össze az Author-AuthorDTO és Book-BookDTO osztályokat
 
-8. Repository előkészítése
+8. Scaffold identity 
+ 	- Package Management Console-ba adjuk ki: update-database
+		Ez létrehozza a szükséges táblákat az adatbázisba.
 
-9. Author repository
 
-10. 
 	
 
 
