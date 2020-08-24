@@ -55,6 +55,9 @@ Megjegyzések:
  	- Package Management Console-ba adjuk ki: update-database
 		Ez létrehozza a szükséges táblákat az adatbázisba.
 
+9. JWT beállítása
+	- Telepítsük fel a következő NuGet csomagot:
+		Microsoft.AspNetCore.Authentication.JwtBearer
 
 	
 
