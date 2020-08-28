@@ -35,17 +35,55 @@ namespace BookStore_API.Controllers
         public object Configuration { get; private set; }
 
         /// <summary>
+        /// Register endpoint
+        /// </summary>
+        /// <param name="userDTO">User's register data</param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("register")]
+        [AllowAnonymous]
+        public async Task<IActionResult> Register([FromBody] UserDTO userDTO)
+        {
+            try
+            {
+                string username = userDTO.EmailAddress;
+                string password = userDTO.Password;
+
+                _logger.LogInfo($"Register attempt from user {username}");
+
+                IdentityUser user = new IdentityUser { Email = username, UserName = username, };
+                var result = await _userManager.CreateAsync(user, password);
+
+                if(!result.Succeeded)
+                {
+                    foreach(var error in result.Errors)
+                    {
+                        _logger.LogError($"{error.Code} {error.Description}");
+                    }
+                    return InternalError(new Exception($"{username} registration attempetd failed"));
+                }
+                return Ok(new { result.Succeeded });
+
+            }
+            catch (Exception ex)
+            {
+                return InternalError(ex);
+            }
+        }
+
+        /// <summary>
         /// User login endpoint
         /// </summary>
         /// <param name="userDTO">User's login data</param>
         /// <returns>Authorize or not</returns>
-        [AllowAnonymous]
         [HttpPost]
+        [Route("login")]
+        [AllowAnonymous]
         public async Task<IActionResult> Login([FromBody] UserDTO userDTO)
         {
             try
             {
-                string username = userDTO.UserName;
+                string username = userDTO.EmailAddress;
                 string password = userDTO.Password;
 
                 _logger.LogInfo($"Login attempt from user {username}");
