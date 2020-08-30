@@ -7,7 +7,7 @@
 
 <div class="card">
     <h2 class="card-title">Register</h2>
-    @if (isFailed)
+    @if (!response)
     {
         <div class="alert alert-danger">
             <p>Something went wrong with the registration attempt</p>
@@ -40,14 +40,12 @@
 
 @code {
     private RegistrationModel Model = new RegistrationModel();
-    private bool isFailed = false;
+    private bool response = true;
 
     private async Task HandleRegistration()
     {
-        var response = await _authRepo.Register(Model);
+        response = await _authRepo.Register(Model);
         if(response)
             _navManager.NavigateTo("/");
-        else
-            isFailed = true;
     }
 }

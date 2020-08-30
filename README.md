@@ -59,7 +59,11 @@ Megjegyzések:
 	- Telepítsük fel a következő NuGet csomagot:
 		Microsoft.AspNetCore.Authentication.JwtBearer
 
-	
+10. Login felület implementálása
+	- Telepítsük a következő NuGet csomagokat:
+		Blazored.LocalStorage
+		System.IdentityModel.Tokens.Jwt
+
 
 
 
