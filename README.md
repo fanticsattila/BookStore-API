@@ -64,8 +64,9 @@ Megjegyzések:
 		Blazored.LocalStorage
 		System.IdentityModel.Tokens.Jwt
 
-
-
+11. Author felületek implementálása
+	- Telepítsük a következő NuGet csomagot:
+		Microsoft.AspNetCore.Mvc.NewtonsoftJson
 
 
 

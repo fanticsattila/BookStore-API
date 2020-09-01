@@ -11,16 +11,6 @@ namespace BookStore_API.Data
         public string LastName { get; set; }
         public string Bio { get; set; }
 
-        private IList<Book> books;
-
-        public virtual IList<Book> GetBooks()
-        {
-            return books;
-        }
-
-        public virtual void SetBooks(IList<Book> value)
-        {
-            books = value;
-        }
+        public virtual IList<Book> Books { get; set; }
     }
 }

@@ -35,7 +35,7 @@ namespace BookStore_API.Controllers
         /// </summary>
         /// <returns>List of authors</returns>
         [HttpGet]
-        [AllowAnonymous]
+        [Authorize(Roles = "Administrator, Customer")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]

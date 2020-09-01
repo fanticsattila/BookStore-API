@@ -1,0 +1,63 @@
+﻿@page "/authors/"
+
+@inject IAuthorRepository _repo
+@inject NavigationManager _navManager
+
+<h3 class="card-title">Index</h3>
+<br />
+<hr />
+<br />
+@if (Model == null)
+{
+    <LoadingMessage Message="Loading authors" />
+}
+else
+{
+    <AuthorizeView Roles="Administrator">
+        <a href="/authors/create" class="btn btn-primary"><span class="oi oi-plus"></span>  Create new author</a>
+        <br />
+    </AuthorizeView>
+    @if (Model.Count < 1)
+    {
+        <LoadingMessage Message="There are no authors in the data store. Please click 'Create new author' to begin." />
+    }
+    else
+    {
+        <table class="table table-responsive">
+            <thead>
+                <tr>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var author in Model)
+                {
+                    <tr>
+                        <td>@author.FirstName</td>
+                        <td>@author.LastName</td>
+                        <td>
+                            <a href="/authors/view/@author.Id" class="btn btn-primary"><span class="oi oi-book"></span></a>
+                            <AuthorizeView Roles="Administrator">
+                                <a href="/authors/edit/@author.Id" class="btn btn-warning"><span class="oi oi-pencil"></span></a>
+                                <a href="/authors/delete/@author.Id" class="btn btn-danger"><span class="oi oi-delete"></span></a>
+                            </AuthorizeView>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    }
+}
+
+@code {
+    private IList<AuthorModel> Model;
+
+    protected async override Task OnInitializedAsync()
+    {
+        Model = await _repo.Get(BookStore_UI.Static.Endpoints.AuthorsEndpoint);
+    }
+
+}
