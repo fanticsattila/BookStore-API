@@ -68,5 +68,9 @@ Megjegyzések:
 	- Telepítsük a következő NuGet csomagot:
 		Microsoft.AspNetCore.Mvc.NewtonsoftJson
 
+11. Book felületek implementálása
+	- Telepítsük a következő NuGet csomagokat:
+		BlazorInputFile
+		Blazored.Toast
 
 

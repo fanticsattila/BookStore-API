@@ -60,6 +60,7 @@ namespace BookStore_UI.Service
 
             HttpClient client = _client.CreateClient();
             client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("bearer", await GetBearerToken());
+
             HttpResponseMessage response = await client.SendAsync(request);
 
             if (response.StatusCode == System.Net.HttpStatusCode.OK)
